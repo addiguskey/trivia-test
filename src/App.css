@@ -1,4 +1,72 @@
 .App {
   text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center; 
+  min-height: 100vh;
+  color: "E4E1DC";
+  background-color: #282c34;
+  color: #d0cfcc;
 }
 
+
+
+.question-card {
+  background-color: #447B99;
+  padding: 16px;
+  width: 80%;
+  height: auto;
+  margin: 0 auto;
+  border-radius: 10mm;
+  color: #d0cfcc;
+    align-items: center;
+      justify-content: center;
+}
+
+ul {
+  list-style: none;
+    align-items: center;
+      justify-content: center;
+}
+
+li {
+  background-color: #255036;
+  padding: 16px;
+  border: none;
+  border-radius: 5mm;
+  margin-top: 5px;
+  font-size: 20px;
+}
+
+.question-text {
+  color: rgb(245, 245, 130);
+  font-weight: 800;
+  padding: 16px;
+}
+.score-card {
+  background-color: #447B99;
+    padding: 16px;
+    width: 80%;
+    height: auto;
+    margin: 0 auto;
+    border-radius: 10mm;
+    color: #d0cfcc;
+    align-items: center;
+    justify-content: center;
+}
+
+.final-results {
+  color:#255036;
+    font-weight: 800;
+    padding: 16px;
+}
+
+.restart-button {
+    background-color:  rgb(245, 245, 130);
+      padding: 16px;
+      border: none;
+      border-radius: 5mm;
+      margin-top: 2px;
+      font-size: 20px;
+}
