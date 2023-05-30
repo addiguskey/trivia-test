@@ -9,13 +9,20 @@ export default function Questions() {
   const [currentQ, setCurrentQ] = useState(0);
   const [isCorrect, setIsCorrect] = useState(false);
   const [isWrong, setIsWrong] = useState(false);
-  function correct() {
-    setIsCorrect((isCorrect) => !isCorrect);
-  }
 
-  function wrong() {
-    setIsWrong((isWrong) => !isWrong);
-  }
+  const correctAnswer = () => {
+    setIsCorrect(true);
+    setTimeout(() => {
+      setIsCorrect(false);
+    }, 1200);
+  };
+
+  const wrongAnswer = () => {
+    setIsWrong(true);
+    setTimeout(() => {
+      setIsWrong(false);
+    }, 1200);
+  };
 
   let data = undefined;
   useEffect(() => {
@@ -51,7 +58,7 @@ export default function Questions() {
             <ul>
               <li>
                 <button
-                  onClick={wrong}
+                  onClick={wrongAnswer}
                   className="btn btn-transparent border-0"
                 >
                   {" "}
@@ -61,7 +68,7 @@ export default function Questions() {
               <li>
                 {" "}
                 <button
-                  onClick={wrong}
+                  onClick={wrongAnswer}
                   className="btn btn-transparent border-0"
                 >
                   {" "}
@@ -71,7 +78,7 @@ export default function Questions() {
               <li>
                 {" "}
                 <button
-                  onClick={wrong}
+                  onClick={wrongAnswer}
                   className="btn btn-transparent border-0"
                 >
                   {" "}
@@ -82,9 +89,8 @@ export default function Questions() {
                 {" "}
                 <div>
                   <button
-                    // ref={ref}
                     id="correctAnswer"
-                    onClick={correct}
+                    onClick={correctAnswer}
                     className="btn btn-transparent border-0"
                   >
                     {data.correctAnswer}
