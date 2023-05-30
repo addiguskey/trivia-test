@@ -9,9 +9,11 @@ export default function Questions() {
   const [currentQ, setCurrentQ] = useState(0);
   const [isCorrect, setIsCorrect] = useState(false);
   const [isWrong, setIsWrong] = useState(false);
+  const [score, setScore] = useState(0);
 
   const correctAnswer = () => {
     setIsCorrect(true);
+    setScore(score + 1);
     setTimeout(() => {
       setIsCorrect(false);
     }, 1200);
@@ -47,62 +49,68 @@ export default function Questions() {
 
   return (
     <>
-      {loading ? (
-        <h4>Loading Questions...</h4>
-      ) : (
-        questions.map((data) => (
-          // Presently we only fetch
-          // title from the API
-          <div>
-            <h4>{data.question.text}</h4>
-            <ul>
-              <li>
-                <button
-                  onClick={wrongAnswer}
-                  className="btn btn-transparent border-0"
-                >
-                  {" "}
-                  {data.incorrectAnswers[0]}
-                </button>
-              </li>
-              <li>
-                {" "}
-                <button
-                  onClick={wrongAnswer}
-                  className="btn btn-transparent border-0"
-                >
-                  {" "}
-                  {data.incorrectAnswers[1]}
-                </button>
-              </li>
-              <li>
-                {" "}
-                <button
-                  onClick={wrongAnswer}
-                  className="btn btn-transparent border-0"
-                >
-                  {" "}
-                  {data.incorrectAnswers[2]}
-                </button>
-              </li>
-              <li>
-                {" "}
-                <div>
+      <div>
+        {" "}
+        <h2>Current Score: {score}</h2>
+      </div>
+      <div>
+        {loading ? (
+          <h4>Loading Questions...</h4>
+        ) : (
+          questions.map((data) => (
+            // Presently we only fetch
+            // title from the API
+            <div>
+              <h4>{data.question.text}</h4>
+              <ul>
+                <li>
                   <button
-                    id="correctAnswer"
-                    onClick={correctAnswer}
+                    onClick={wrongAnswer}
                     className="btn btn-transparent border-0"
                   >
-                    {data.correctAnswer}
+                    {" "}
+                    {data.incorrectAnswers[0]}
                   </button>
-                </div>
-              </li>
-            </ul>
-            {isCorrect && <Correct></Correct>}
-            {isWrong && <Wrong></Wrong>}
-          </div>
-        ))
-      )}
+                </li>
+                <li>
+                  {" "}
+                  <button
+                    onClick={wrongAnswer}
+                    className="btn btn-transparent border-0"
+                  >
+                    {" "}
+                    {data.incorrectAnswers[1]}
+                  </button>
+                </li>
+                <li>
+                  {" "}
+                  <button
+                    onClick={wrongAnswer}
+                    className="btn btn-transparent border-0"
+                  >
+                    {" "}
+                    {data.incorrectAnswers[2]}
+                  </button>
+                </li>
+                <li>
+                  {" "}
+                  <div>
+                    <button
+                      id="correctAnswer"
+                      onClick={correctAnswer}
+                      className="btn btn-transparent border-0"
+                    >
+                      {data.correctAnswer}
+                    </button>
+                  </div>
+                </li>
+              </ul>
+              {isCorrect && <Correct></Correct>}
+              {isWrong && <Wrong></Wrong>}
+            </div>
+          ))
+        )}
+      </div>
     </>
   );
 }

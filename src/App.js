@@ -12,7 +12,6 @@ function App() {
       {/* 1. header */}
       <h1>Are you good at triivia?</h1>
       {/* 2. Current Score */}
-      <h2>Current Score: {score}</h2>
       {showFinalResults ? (
         <div className="score-card">
           <h1>Final Results</h1>
