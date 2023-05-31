@@ -1,7 +1,9 @@
 import "./App.css";
 import React, { useState, useEffect } from "react";
-import Questions from "./components/question";
+// import Questions from "./components/question";
+import TriviaQs from "./components/questions2";
 
+const styles = {};
 function App() {
   const [showFinalResults, setFinalResults] = useState(false);
   const [score, setScore] = useState(0);
@@ -9,20 +11,18 @@ function App() {
 
   return (
     <div className="App">
-      {/* 1. header */}
-      <h1>Are you good at triivia?</h1>
-      {/* 2. Current Score */}
       {showFinalResults ? (
         <div className="score-card">
           <h1>Final Results</h1>
-          <h2 className="final-results"> 1 of 5 Correct (20%)</h2>
-          <button className="restart-button">Restart Game</button>
+          <button className="btn btn-transparent restart-button">
+            Restart Game
+          </button>
         </div>
       ) : (
         <div className="question-card">
           {/* <h2>Question {currentQ + 1} out of 10</h2> */}
 
-          <Questions></Questions>
+          <TriviaQs> </TriviaQs>
         </div>
       )}{" "}
     </div>

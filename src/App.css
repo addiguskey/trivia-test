@@ -10,8 +10,6 @@
   color: #d0cfcc;
 }
 
-
-
 .question-card {
   background-color: #447B99;
   padding: 16px;
@@ -20,8 +18,8 @@
   margin: 0 auto;
   border-radius: 10mm;
   color: #d0cfcc;
-    align-items: center;
-      justify-content: center;
+  align-items: center;
+  justify-content: center;
 }
 
 ul {
@@ -39,9 +37,15 @@ li {
   font-size: 20px;
 }
 
+button {
+  color: #d0cfcc !important;
+  font-weight: 700 !important;
+  font-size: large !important;
+}
+
 .question-text {
   color: rgb(245, 245, 130);
-  font-weight: 800;
+  font-weight: 600;
   padding: 16px;
 }
 .score-card {
